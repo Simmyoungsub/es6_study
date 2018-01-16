@@ -89,3 +89,27 @@
 
 6. Hoisting
   + javascript는 함수 스코핑을 사용
+  + 자바스크립트 엔진구동시 선언문을 최우선으로 하여 해석하고
+    할당구문은 런타임과정에서 이루어지기때문에 호이스팅 되지 않는다.
+
+7. Symbol
+  + Symbol is another type
+  + 심볼은 Unique하다(생성할 때마다 독자적인 메모리 공간을 가짐)
+  + 프로그램이 이름 충돌의 위험없이 property의 key로 쓰기위해 생성하고 사용할 수 있는 값
+  + 외부에 노출되지 않는다.
+  + [] 기호로 접근이 가능하다.
+          var isMoving = Symbol('isMoving');
+          var obj = {
+            [isMoving] : function() {
+              console.log('isMoving');
+            },
+            age: 20,
+            name: 'David'
+          };
+
+          for(let key in obj) {
+            console.log(obj[key]);
+          }
+
+          console.log(Object.getOwnPropertyNames(obj));
+          console.log(Object.getOwnPropertySymbols(obj));
