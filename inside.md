@@ -60,3 +60,33 @@
             var undefinedVal = undefined;
             console.log(typeof nullVal);
             console.log(typeof undefinedVal);
+  + 객체 타입
+    - 단순 key: value형태의 프로퍼티들을 저장하는 컨테이너
+    - 객체의 프로퍼티는 기본타입의 값을 포함하거나, 다른 객체를 가리킬 수도 있다.
+    - 객체 생성방법
+      - Object() 객체 생성자
+              var foo = new Object();
+              foo.name = 'foo';
+              foo.age = 20;
+              console.log(foo);
+              console.log(typeof foo);
+
+      - 객체리터럴
+              var foo = {
+                name : 'foo',
+                age : 20
+              };
+      - 생성자 함수
+    - 프로퍼티 접근
+      - [], . 사용
+  + 객체 타입의 특성
+    - 같은 객체를 가리킨다는것은 한쪽을 수정하면 다른쪽도 영향을 받는다는것이다.
+    - === 로 두 객체를 비교할경우 객체의 프로퍼티값이 아닌 참조값(주소값)을 비교한다.
+            var obj1 = {val: 100};
+            var obj2 = {val: 100};
+            var obj3 = obj2;
+
+            console.log(obj1 === obj2);
+            console.log(obj2 === obj3);
+
+    - 객체 안에는 참조값이 저장되어있으므로 === 로 비교시 참조값을 비교하는것이다.
